@@ -1,0 +1,55 @@
+[0m15:34:51.691931 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a031360>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b0eeb30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b0ee410>]}
+
+
+============================== 15:34:51.697678 | 14a05b33-af56-4d8b-86e3-ba5e7699ee25 ==============================
+[0m15:34:51.697678 [info ] [MainThread]: Running with dbt=1.10.13
+[0m15:34:51.698712 [debug] [MainThread]: running dbt with arguments {'empty': 'None', 'no_print': 'None', 'profiles_dir': '/Users/kevserdurak/.dbt', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'invocation_command': 'dbt init greenplum_dbt_project', 'partial_parse': 'True', 'debug': 'False', 'indirect_selection': 'eager', 'log_path': 'logs', 'target_path': 'None', 'printer_width': '80', 'static_parser': 'True', 'use_colors': 'True', 'log_format': 'default', 'use_experimental_parser': 'False', 'quiet': 'False', 'log_cache_events': 'False', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'write_json': 'True', 'fail_fast': 'False'}
+[0m15:34:51.713047 [info ] [MainThread]: Creating dbt configuration folder at /Users/kevserdurak/.dbt
+[0m15:34:51.714519 [debug] [MainThread]: Starter project path: /opt/homebrew/lib/python3.10/site-packages/dbt/include/starter_project
+[0m15:34:51.722477 [info ] [MainThread]: 
+Your new dbt project "greenplum_dbt_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:34:51.723119 [info ] [MainThread]: Setting up your profile.
+[0m15:35:34.690978 [error] [MainThread]: Encountered an error:
+
+[0m15:35:34.696691 [error] [MainThread]: Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.10/site-packages/dbt/cli/requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/opt/homebrew/lib/python3.10/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/homebrew/lib/python3.10/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+  File "/opt/homebrew/lib/python3.10/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/opt/homebrew/lib/python3.10/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/opt/homebrew/lib/python3.10/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/opt/homebrew/lib/python3.10/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "/opt/homebrew/lib/python3.10/site-packages/dbt/task/init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+  File "/opt/homebrew/lib/python3.10/site-packages/click/termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+  File "/opt/homebrew/lib/python3.10/site-packages/click/termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m15:35:34.702603 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 43.548084, "process_in_blocks": "0", "process_kernel_time": 0.174237, "process_mem_max_rss": "104759296", "process_out_blocks": "0", "process_user_time": 0.893977}
+[0m15:35:34.705700 [debug] [MainThread]: Command `dbt init` failed at 15:35:34.705379 after 43.55 seconds
+[0m15:35:34.707676 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a031360>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b5762f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b574280>]}
+[0m15:35:34.708443 [debug] [MainThread]: Flushing usage events
+[0m15:35:35.852083 [debug] [MainThread]: An error was encountered while trying to flush usage events
